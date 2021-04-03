@@ -1,0 +1,25 @@
+# action.yaml
+name: "crda-analysis"
+description: "The CRDA Analysis task is an interface between Tekton and Red Hat CodeReady Dependency Analytics platform. It provides vulnerability and compliance analysis for your Python applications dependencies, along with recommendations to address security vulnerabilities and licensing issues."
+
+inputs:
+  manifest-file-path:
+    description: "manifest"
+    required: true
+    default: /github/workspace/requirements1.txt
+  output-file-path:
+    description: "result"
+    required: true
+    default: /github/workspace/result1.json
+  pkg-installation-directory-path:
+    description: "pkg"
+    required: true
+    default: /github/workspace
+runs:
+  using: "docker"
+  image: 'docker://ghcr.io/fabric8-analytics/crda-python:3.8'
+  args:
+    - '${{ inputs.manifest-file-path}}' 
+    - '${{ inputs.output-file-path}}' 
+    - '${{ inputs.pkg-installation-directory-path}}'
+  entrypoint: '/crda.sh'
