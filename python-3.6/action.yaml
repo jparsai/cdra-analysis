@@ -17,7 +17,7 @@ inputs:
     default: /github/workspace
 runs:
   using: "docker"
-  image: 'docker://quay.io/jparsai/crdaimagev2'
+  image: 'docker://ghcr.io/fabric8-analytics/crda-python:3.6'
   args:
     - '${{ inputs.manifest-file-path}}' 
     - '${{ inputs.output-file-path}}' 
