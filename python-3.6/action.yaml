@@ -6,18 +6,18 @@ inputs:
   manifest-file-path:
     description: "manifest"
     required: true
-    default: /github/workspace/requirements1.txt
+    default: requirements1.txt
   output-file-path:
     description: "result"
     required: true
-    default: /github/workspace/result1.json
+    default: result1.json
   pkg-installation-directory-path:
     description: "pkg"
     required: true
-    default: /github/workspace
+    default: site-dir
 runs:
   using: "docker"
-  image: 'docker://ghcr.io/fabric8-analytics/crda-python:3.6'
+  image: 'docker://quay.io/jparsai/crdaimagev2'
   args:
     - '${{ inputs.manifest-file-path}}' 
     - '${{ inputs.output-file-path}}' 
