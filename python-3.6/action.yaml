@@ -4,20 +4,20 @@ description: "The CRDA Analysis task is an interface between Tekton and Red Hat 
 
 inputs:
   manifest-file-path:
-    description: "manifest"
+    description: Path of target manifest file to perform analysis.
     required: true
     default: requirements1.txt
   output-file-path:
-    description: "result"
+    description: Path of the file to save analysis report.
     required: true
-    default: result1.json
+    default: crda-analysis-report.json
   pkg-installation-directory-path:
-    description: "pkg"
+    description: Path of a directory in workspace, where dependencies are installed.
     required: true
     default: site-dir
 runs:
   using: "docker"
-  image: 'docker://quay.io/jparsai/crdaimagev2'
+  image: 'docker://ghcr.io/fabric8-analytics/crda-python:3.6'
   args:
     - '${{ inputs.manifest-file-path}}' 
     - '${{ inputs.output-file-path}}' 
