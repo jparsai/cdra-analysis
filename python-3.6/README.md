@@ -1,6 +1,6 @@
 # crda-analysis Python (3.6)  Action
 
-A GitHub Action for using Red Hat CodeReady Dependency Analytics platform to detect vulnerabilities in your Python-3.8 projects.
+A GitHub Action for using Red Hat CodeReady Dependency Analytics platform to detect vulnerabilities in your Python-3.6 projects.
 
 You can use the Action as follows:
 
