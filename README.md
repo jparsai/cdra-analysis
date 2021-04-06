@@ -108,7 +108,7 @@ jobs:
           mkdir -p site-dir
           pip3 install --target=site-dir -r requirements.txt      
       - name: crda-analysis
-        uses: fabric8-analytics/cdra-analysis/python-3.6@main
+        uses: fabric8-analytics/cdra-analysis@main
         with:
           manifest-file-path: requirements.txt
           output-file-path: crda-analysis-report.json
